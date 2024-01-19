@@ -5,7 +5,9 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+} from '@remix-run/react'
+import './globals.css'
+import 'leaflet/dist/leaflet.css'
 
 export default function App() {
   return (
@@ -16,14 +18,14 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="min-h-screen bg-white font-raleway text-slate-900 antialiased">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
     </html>
-  );
+  )
 }
 
 export function HydrateFallback() {
@@ -35,11 +37,13 @@ export function HydrateFallback() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <p>Loading...</p>
+      <body className="min-h-screen bg-white font-raleway text-slate-900 antialiased">
+        <div className="flex min-h-screen w-full items-center justify-center">
+          <p>Loading...</p>
+        </div>
         <Scripts />
         <LiveReload />
       </body>
     </html>
-  );
+  )
 }
