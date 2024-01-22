@@ -3,7 +3,7 @@ import React from 'react'
 import { MdEmail, MdPhone } from 'react-icons/md'
 
 import { ClientOnly } from 'remix-utils/client-only'
-import Map from './Map'
+import Map from './Map.client'
 
 function Footer() {
   const mapHeight = '150px'
@@ -49,7 +49,17 @@ function Footer() {
               <span className="text-red-500">K</span>de nás nájdete
             </h3>
             <div className="flex flex-col space-y-2">
-              <Map height={mapHeight} />
+              <ClientOnly
+                fallback={
+                  <div
+                    id="skeleton"
+                    style={{ height: mapHeight, background: '#d1d1d1' }}
+                  />
+                }
+              >
+                {() => <Map height={mapHeight} />}
+              </ClientOnly>
+              {/* <Map height={mapHeight} /> */}
             </div>
           </div>
         </div>
