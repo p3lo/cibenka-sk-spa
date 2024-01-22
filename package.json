@@ -29,6 +29,7 @@
     "clsx": "^2.1.0",
     "http-server": "^14.1.1",
     "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
     "lucide-react": "^0.312.0",
     "morgan": "^1.10.0",
     "react": "18.3.0-canary-6639ed3b3-20240111",

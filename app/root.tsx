@@ -7,7 +7,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react'
 import './globals.css'
-import 'leaflet/dist/leaflet.css'
+// import 'leaflet/dist/leaflet.css'
 
 export default function App() {
   return (

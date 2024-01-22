@@ -59,6 +59,9 @@ dependencies:
   leaflet:
     specifier: ^1.9.4
     version: 1.9.4
+  leaflet-defaulticon-compatibility:
+    specifier: ^0.1.2
+    version: 0.1.2
   lucide-react:
     specifier: ^0.312.0
     version: 0.312.0(react@18.3.0-canary-6639ed3b3-20240111)
@@ -5118,6 +5121,10 @@ packages:
 
   /leac@0.6.0:
     resolution: {integrity: sha512-y+SqErxb8h7nE/fiEX07jsbuhrpO9lL8eca7/Y1nuWV2moNlXhyd59iDGcRf6moVyDMbmTNzL40SUyrFU/yDpg==}
+    dev: false
+
+  /leaflet-defaulticon-compatibility@0.1.2:
+    resolution: {integrity: sha512-IrKagWxkTwzxUkFIumy/Zmo3ksjuAu3zEadtOuJcKzuXaD76Gwvg2Z1mLyx7y52ykOzM8rAH5ChBs4DnfdGa6Q==}
     dev: false
 
   /leaflet@1.9.4:
