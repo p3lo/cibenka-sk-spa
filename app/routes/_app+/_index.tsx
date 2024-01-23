@@ -61,17 +61,19 @@ function Main() {
         <SwiperSlide>
           <div className="relative flex w-full items-center justify-center">
             <img alt="1" src={slider1} />
-            <div className="absolute top-0 h-[50%] w-[60%] bg-stone-600/80 lg:top-[25%] 2xl:top-[30%]">
+            <div className="absolute top-0 h-[100%] w-[60%] bg-stone-600/80 lg:top-[25%] lg:h-[50%] 2xl:top-[30%]">
               <div className="flex items-center justify-center text-slate-100">
-                <div className="my-[3%] flex flex-col items-center space-y-3">
-                  <h2 className="text-3xl font-bold">
+                <div className="m-[1%] flex flex-col items-center space-y-1 lg:m-[3%] lg:space-y-3">
+                  <h2 className="text-sm font-bold lg:text-3xl">
                     Právne služby a právne poraďenstvo
                   </h2>
-                  <p className="font-semibold">
+                  <p className="lg:text-md text-xs font-semibold">
                     Sme advokátska kancelária poskytujúca právne služby a právne
                     poradenstvo v oblasti slovenského a českého práva
                   </p>
-                  <Link to="/o-nas">Čítaj viac</Link>
+                  <Link to="/o-nas" className="lg:text-md text-xs">
+                    Čítaj viac
+                  </Link>
                 </div>
               </div>
             </div>
@@ -80,14 +82,21 @@ function Main() {
         <SwiperSlide>
           <div className="relative flex w-full items-center justify-center">
             <img alt="1" src={slider2} />
-            <div className="absolute top-[25%] h-[50%] w-[60%] bg-stone-600/80">
+            <div className="absolute top-0 h-[100%] w-[60%] bg-stone-600/80 lg:top-[25%] lg:h-[50%] 2xl:top-[30%]">
               <div className="flex items-center justify-center text-slate-100">
-                <div className="my-[3%] flex flex-col items-center space-y-3">
-                  <h2 className="text-3xl font-bold">Založenie spoločnosti</h2>
-                  <p className="font-semibold">
+                <div className="m-[1%] flex flex-col items-center space-y-1 lg:m-[3%] lg:space-y-3">
+                  <h2 className="text-sm font-bold lg:text-3xl">
+                    Založenie spoločnosti
+                  </h2>
+                  <p className="lg:text-md text-xs font-semibold">
                     Pomôžeme Vám so založením spoločnosti
                   </p>
-                  <Link to="/sluzby/zalozenie-spolocnosti">Čítaj viac</Link>
+                  <Link
+                    to="/sluzby/zalozenie-spolocnosti"
+                    className="lg:text-md text-xs"
+                  >
+                    Čítaj viac
+                  </Link>
                 </div>
               </div>
             </div>
@@ -96,14 +105,21 @@ function Main() {
         <SwiperSlide>
           <div className="relative flex w-full items-center justify-center">
             <img alt="1" src={slider3} />
-            <div className="absolute top-[25%] h-[50%] w-[60%] bg-stone-600/80">
+            <div className="absolute top-0 h-[100%] w-[60%] bg-stone-600/80 lg:top-[25%] lg:h-[50%] 2xl:top-[30%]">
               <div className="flex items-center justify-center text-slate-100">
-                <div className="my-[3%] flex flex-col items-center space-y-3">
-                  <h2 className="text-3xl font-bold">Pracovné právo</h2>
-                  <p className="font-semibold">
+                <div className="m-[1%] flex flex-col items-center space-y-1 lg:m-[3%] lg:space-y-3">
+                  <h2 className="text-sm font-bold lg:text-3xl">
+                    Pracovné právo
+                  </h2>
+                  <p className="lg:text-md text-xs font-semibold">
                     Podrobné informácie o Novele zákonníka práce
                   </p>
-                  <Link to="/podla-odvetvia/pracovne-pravo">Čítaj viac</Link>
+                  <Link
+                    to="/podla-odvetvia/pracovne-pravo"
+                    className="lg:text-md text-xs"
+                  >
+                    Čítaj viac
+                  </Link>
                 </div>
               </div>
             </div>
