@@ -8,7 +8,7 @@ export function getMailer(
   name: string,
 ) {
   const emailHtml = render(Email({ text, name }))
-  const url = 'https://api.mysiacik.com/resend'
+  const url = 'https://resend.mysiacik.com/resend'
   const headers = {
     'Content-Type': 'application/json',
   }

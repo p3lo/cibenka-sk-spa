@@ -29,42 +29,44 @@ export const meta: MetaFunction = () => {
 }
 
 export async function clientAction({ request }: ClientActionFunctionArgs) {
-  const cloudflareSecret = process.env.CLOUDFLARE_SECRET
-  const endpoint = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
   const formData = await request.formData()
-  const token = formData.get('cf-turnstile-response')
-  if (token && cloudflareSecret) {
-    const body = `secret=${encodeURIComponent(cloudflareSecret?.toString())}&response=${encodeURIComponent(
-      token.toString(),
-    )}`
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      body,
-      headers: {
-        'content-type': 'application/x-www-form-urlencoded',
-      },
-    })
-    const data = await res.json()
-    if (data && !data.success) {
-      return { error: true }
-    }
-  }
-
-  const name = formData.get('name')
-  const email = formData.get('email')
-  const subject = formData.get('subject')
-  const message = formData.get('message')
+  const token = formData.get('cf-turnstile-response') as string
+  console.log('kokot', token)
+  const name = formData.get('name') as string
+  const email = formData.get('email') as string
+  const subject = formData.get('subject') as string
+  const message = formData.get('message') as string
 
   if (!name || !email || !subject || !message) {
     return { error: true }
   }
 
+  // URL of your Cloudflare Worker
+  const workerUrl = 'https://turnstile.mysiacik.com/cibenka'
+
+  // Make a fetch request to the Cloudflare Worker
+  const response = await fetch(workerUrl, {
+    method: 'POST',
+    body: JSON.stringify({ token }),
+    headers: {
+      'content-type': 'application/json',
+    },
+  })
+
+  const validationResponse = await response.json()
+  console.log(validationResponse)
+  if (!validationResponse.success) {
+    return { error: true }
+  }
+
+  // Proceed with sending the email
   getMailer(
     message.toString(),
     subject.toString(),
     email.toString(),
     name.toString(),
   )
+
   return { error: false }
 }
 
